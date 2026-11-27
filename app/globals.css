@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-burgundy: #850d30;
+  --color-burgundy-deep: #650b26;
+  --color-gold: #c9a65b;
+  --color-peach: #f5b995;
+  --color-ivory: #fffdf9;
+  --color-blush: #f8e9ec;
+  --color-ink: #3d3033;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope Variable", "Manrope", system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
+body { background: var(--color-ivory); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--color-burgundy-deep); font-weight: 500; letter-spacing: -0.01em; }
+::selection { background: var(--color-blush); color: var(--color-burgundy-deep); }
+
+@utility container-x { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+@utility eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.28em] text-gold; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-medium tracking-wide transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold; }
+@utility btn-primary { @apply btn bg-burgundy text-white hover:bg-burgundy-deep hover:-translate-y-0.5 hover:shadow-lg hover:shadow-burgundy/20; }
+@utility btn-outline { @apply btn border border-burgundy/30 text-burgundy hover:border-burgundy hover:bg-burgundy hover:text-white; }
+@utility btn-light { @apply btn bg-white text-burgundy hover:bg-ivory hover:-translate-y-0.5; }
+@utility gold-rule { @apply block h-px w-14 bg-gold; }
+.prose-lilly p { @apply mb-5 leading-8 text-ink/85; }
+.prose-lilly h2 { @apply mt-10 mb-3 text-3xl; }
+@utility field { @apply w-full border border-ink/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-burgundy focus:ring-2 focus:ring-burgundy/10; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+@keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1); } }
